@@ -8,4 +8,4 @@ dubbo:
   application:
     name: sc_class_service
   registry:
-    address: zookeeper://192.168.109.161:2181
+    address: zookeeper://192.168.109.161:2183

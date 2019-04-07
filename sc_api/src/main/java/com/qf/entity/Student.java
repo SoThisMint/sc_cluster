@@ -26,5 +26,6 @@ public class Student implements Serializable {
     private Integer age;
     @TableField(value = "class_id")
     private Integer classId;
+    @TableField(exist = false)
     private String className;
 }

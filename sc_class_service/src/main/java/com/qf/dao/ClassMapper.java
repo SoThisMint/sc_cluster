@@ -2,7 +2,6 @@ package com.qf.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.qf.entity.Class;
-import org.apache.ibatis.annotations.Select;
 
 /**
  * @author ：Tony
@@ -13,6 +12,5 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface ClassMapper extends BaseMapper<Class> {
 
-    @Select("select class_name from t_class where id=#{id}")
     String getClassNameById(Integer classId);
 }

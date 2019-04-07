@@ -1,8 +1,8 @@
 package com.qf.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.qf.entity.Class;
-import com.qf.service.IClassService;
+import com.qf.entity.Student;
+import com.qf.service.IStuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,29 +11,28 @@ import java.util.List;
 
 /**
  * @author ：Tony
- * @date ：Created in 2019/4/6 11:13
+ * @date ：Created in 2019/4/7 20:58
  * @description：${description}
  * @modified By：
  * @version: $version$
  */
 @Controller
-@RequestMapping("/class")
-public class ClassController {
+@RequestMapping("/stu")
+public class StuController {
 
     @Reference
-    private IClassService classService;
+    private IStuService stuService;
 
     @RequestMapping("/list")
-    public String list(Model model) {
-        List<Class> list = classService.list();
-        model.addAttribute("classList", list);
-        return "ClassList";
+    public String list(Model model){
+        List<Student> list = stuService.list();
+        model.addAttribute("list",list);
+        return "stuList";
     }
 
     @RequestMapping("/insert")
-    public String insert(Class c) {
-        classService.insert(c);
+    public String insert(Student stu){
+        stuService.insert(stu);
         return "redirect:list";
     }
-
 }

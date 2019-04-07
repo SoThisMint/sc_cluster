@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <base th:href="${#request.getContextPath()}+'/'" />
 </head>
 <body>
-
+<table border="1px" cellspacing="0px">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>班级名称</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="s : ${list}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+    </tr>
+    </tbody>
+    <form action="class/insert" method="get">
+        <tr>
+            <td>编号：</td>
+            <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <td>学生姓名：</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>年龄：</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit">添加</button></td>
+        </tr>
+    </form>
+</table>
 </body>
 </html>

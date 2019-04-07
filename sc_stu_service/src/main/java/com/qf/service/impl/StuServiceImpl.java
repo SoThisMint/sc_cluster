@@ -1,5 +1,6 @@
 package com.qf.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.qf.dao.ClassMapper;
 import com.qf.dao.StuMapper;
 import com.qf.entity.Student;
@@ -15,6 +16,7 @@ import java.util.List;
  * @modified By：
  * @version: $version$
  */
+@Service
 public class StuServiceImpl implements IStuService {
 
     @Autowired
